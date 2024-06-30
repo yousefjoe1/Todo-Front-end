@@ -28,7 +28,7 @@ const UserCard = ({userInfo}:{userInfo:UserInfo}) => {
     <>
 
     <button>
-    <ImProfile />
+    <ImProfile className="lg:text-3xl text-base text-emerald-700" />
     </button>
 
     {/* <Popover>

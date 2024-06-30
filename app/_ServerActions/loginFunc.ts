@@ -16,6 +16,7 @@ const loginFunc = async (data: UserInfo): Promise<any | ErrorResponse> => {
 
   try {
     const resp = await axios.post(`http://localhost:5000/api/auth/login`, data);
+    cookie.set('todoUsertk',resp.data.access_token)
     return { data: resp.data, status: true };
   } catch (er: any) {
     console.log(er?.response?.data, "err in login.ts");
