@@ -1,0 +1,8 @@
+  const msg = useToast();
+    msg({
+      title: "updated",
+      status: "success",
+      duration: 3000,
+      position: "top",
+      isClosable: true,
+    });
