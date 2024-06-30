@@ -7,8 +7,6 @@ import { MdOutlinePreview } from "react-icons/md";
 
 import { ChakraUiProv } from "./Providers/ChakraUiProv";
 
-import getData from "@/Requests/getData";
-
 import CreateTodos from "./_components/Forms/CreateTodos";
 import TodoBtns from "./_components/Btns/TodoBtns";
 import CustomModal from "./_components/Modals/CustomModal";
@@ -30,6 +28,7 @@ export default async function Home() {
   return (
     <main className="min-h-screen lg:p-24 md:p-12 p-4">
       <CreateTodos />
+      <br />
       {status == false ? (
         <h4 className="bg-red-500 p-2 rounded-lg text-white lg:text-2xl">
           {err}

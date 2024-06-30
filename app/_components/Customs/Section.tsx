@@ -1,12 +1,8 @@
 import React from 'react'
 
-const Section = ({
-    children,
-  }: Readonly<{
-    children: React.ReactNode;
-  }>) => {
+const Section = ({children}: Readonly<{children: React.ReactNode;}>) => {
   return (
-    <section className='min-h-screen'>
+    <section className={`min-h-screen`}>
         {children}
     </section>
   )
