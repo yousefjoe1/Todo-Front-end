@@ -1,11 +1,18 @@
 'use client'
-import React, { FormEvent, useState} from 'react'
+import React, { FormEvent, useEffect, useState} from 'react'
 import { ChakraUiProv } from '@/app/Providers/ChakraUiProv'
 import { Spinner, useToast } from '@chakra-ui/react';
 import loginFunc from '@/app/_ServerActions/loginFunc';
 
 const Login = () => {
 
+  useEffect(() => {
+    setTimeout(() => {
+      document.getElementById('user-email')?.classList.add('name-anim')
+      document.getElementById('user-password')?.classList.add('email-anim')
+    }, 1000);
+  }, [])
+  
   const msg = useToast();
   const [isSend, setIsSend] = useState(false);
   const [info, setInfo] = useState({
@@ -41,7 +48,7 @@ const Login = () => {
     <ChakraUiProv>
       <form onSubmit={handleSubmit}>
         <div className="mt-5 lg:w-[300px] md:w-[300px]">
-          <label htmlFor="email" className="ml-2">
+          <label htmlFor="user-email" className="ml-2">
             Email
           </label>
           <input
@@ -49,13 +56,13 @@ const Login = () => {
               setInfo((p) => (p = { ...p, email: e.target.value }))
             }
             type="email"
-            id="email"
-            className="bg-rose-50 text-teal-600 max-[400px]:w-full p-2 block lg:rounded-r-xl"
+            id="user-email"
+            className="bg-rose-50 border-none outline-none text-teal-600 max-[400px]:w-full p-2 block lg:rounded-r-xl translate-x-[70%] ease-in-out duration-700 transition-all"
           />
         </div>
         <div className="flex justify-center mt-5">
           <div>
-            <label htmlFor="password" className="">
+            <label htmlFor="user-password" className="">
               Password
             </label>
             <input
@@ -63,8 +70,8 @@ const Login = () => {
                 setInfo((p) => (p = { ...p, password: e.target.value }))
               }
               type="password"
-              id="password"
-              className="bg-rose-50 text-teal-600 p-2 block rounded-xl"
+              id="user-password"
+              className="bg-rose-50 border-none outline-none text-teal-600 p-2 block rounded-xl ease-in-out duration-700 transition-all h-4"
             />
           </div>
         </div>

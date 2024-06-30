@@ -2,10 +2,21 @@
 import { ChakraUiProv } from "@/app/Providers/ChakraUiProv";
 import createUser from "@/app/_ServerActions/createFunc";
 import { Spinner, useToast } from "@chakra-ui/react";
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
 
 const Register = () => {
   const msg = useToast();
+
+
+  useEffect(() => {
+    setTimeout(() => {
+      document.getElementById('username')?.classList.add('name-anim')
+      document.getElementById('password-login')?.classList.add('pass-anim')
+      document.getElementById('useremail')?.classList.add('email-anim')
+    }, 1000);
+    // pass-anim email-anim
+  }, [])
+  
 
   const [isSend, setIsSend] = useState(false);
   const [info, setInfo] = useState({
@@ -41,21 +52,21 @@ const Register = () => {
     <ChakraUiProv>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name" className="ml-3">
+          <label htmlFor="username" className="ml-3">
             Your Name
           </label>
           <input
             onChange={(e) =>
               setInfo((p) => (p = { ...p, name: e.target.value }))
             }
-            id="name"
+            id="username"
             type="text"
-            className="bg-rose-50 text-teal-600 block p-2 rounded-r-xl"
+            className={`bg-rose-50 text-teal-600 block p-2 rounded-r-xl translate-x-[70%] ease-in-out duration-700 transition-all`}
           />
         </div>
         {/* <br /> */}
         <div className="mt-5 lg:w-[300px] md:w-[300px] mx-auto">
-          <label htmlFor="email" className="">
+          <label htmlFor="useremail">
             Email
           </label>
           <input
@@ -63,13 +74,13 @@ const Register = () => {
               setInfo((p) => (p = { ...p, email: e.target.value }))
             }
             type="email"
-            id="email"
-            className="bg-rose-50 text-teal-600 max-[400px]:w-full p-2 block lg:rounded-xl"
+            id="useremail"
+            className={`bg-rose-50 text-teal-600 max-[400px]:w-full h-4 p-2 block lg:rounded-xl ease-in-out duration-700 transition-all`}
           />
         </div>
         <div className="flex justify-end mt-5">
           <div>
-            <label htmlFor="password" className="">
+            <label htmlFor="password-login">
               Password
             </label>
             <input
@@ -77,8 +88,8 @@ const Register = () => {
                 setInfo((p) => (p = { ...p, password: e.target.value }))
               }
               type="password"
-              id="password"
-              className="bg-rose-50 text-teal-600 p-2 block rounded-l-xl"
+              id="password-login"
+              className={`bg-rose-50 text-teal-600 p-2 block rounded-l-xl translate-x-[-70%] ease-in-out duration-700 transition-all`}
             />
           </div>
         </div>

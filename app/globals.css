@@ -49,3 +49,15 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(13 148 136 / var(--tw-bg-opacity));
 }
+
+
+
+.name-anim{
+  transform: translate(0%);
+}
+.email-anim{
+  height: 40px;
+}
+.pass-anim{
+  transform: translate(0%);
+}
