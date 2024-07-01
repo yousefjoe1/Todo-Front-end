@@ -56,9 +56,9 @@ const Nav = ({ userAccount }: { userAccount: userDetails }) => {
           </li> */}
           <li>
             <Link
-              href={"/"}
+              href={"/completed"}
               className={`${
-                path == "/other"
+                path == "/completed"
                   ? "border-b-2 border-white text-yellow-100"
                   : "text-white"
               }`}
