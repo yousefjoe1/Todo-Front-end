@@ -18,6 +18,8 @@ interface userDetails {
 
 const Nav = ({ userAccount }: { userAccount: userDetails }) => {
   const path = usePathname();
+console.log(userAccount,'use acc');
+
 
 
   return (
@@ -68,7 +70,7 @@ const Nav = ({ userAccount }: { userAccount: userDetails }) => {
           </li>
         </ul>
 
-          {!userAccount.is_user ? (
+          {!userAccount?.is_user ? (
             <Link href={"/auth"} className="w-[30px] ">
               <ImEnter  className="lg:text-3xl text-base text-emerald-700"/>
             </Link>

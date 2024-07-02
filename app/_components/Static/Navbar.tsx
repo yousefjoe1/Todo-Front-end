@@ -6,7 +6,7 @@ const Navbar = async () => {
 
   const mytoken = await getToken()
 
-  // console.log(mytoken,'my tk');
+  console.log(mytoken,'my tk');
   
   
   return (
