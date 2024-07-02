@@ -4,7 +4,7 @@ import createUser from "@/app/_ServerActions/createFunc";
 import { Spinner, useToast } from "@chakra-ui/react";
 import React, { FormEvent, useEffect, useRef, useState } from "react";
 
-const Register = () => {
+const Register = ({showLogin}:{showLogin: Function}) => {
   const msg = useToast();
 
 
@@ -38,6 +38,7 @@ const Register = () => {
         isClosable: true,
       });
     } else {
+      showLogin()
       msg({
         title: "created",
         status: "success",

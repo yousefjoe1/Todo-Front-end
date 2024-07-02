@@ -4,8 +4,10 @@ import { ChakraUiProv } from '@/app/Providers/ChakraUiProv'
 import { Spinner, useToast } from '@chakra-ui/react';
 import loginFunc from '@/app/_ServerActions/loginFunc';
 
-const Login = () => {
+import { useRouter } from 'next/navigation';
 
+const Login = () => {
+  const router = useRouter();
   useEffect(() => {
     setTimeout(() => {
       document.getElementById('user-email')?.classList.add('name-anim')
@@ -32,6 +34,7 @@ const Login = () => {
         position: "top",
         isClosable: true,
       });
+      setIsSend((p) => !p);
     } else {
       msg({
         title: "Loged In",
@@ -40,9 +43,9 @@ const Login = () => {
         position: "top",
         isClosable: true,
       });
+      router.push('/')
       
     }
-    setIsSend((p) => !p);
   };
   return (
     <ChakraUiProv>

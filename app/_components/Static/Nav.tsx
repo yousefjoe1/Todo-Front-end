@@ -25,9 +25,9 @@ const Nav = ({ userAccount }: { userAccount: userDetails }) => {
       <nav className="flex gap-4 relative items-center justify-around px-2 h-[60px] ">
         <Link
           href={"/"}
-          className="w-[30px] "
+          className={`w-[30px] `}
         >
-            <RiHomeSmile2Line className="lg:text-3xl text-base text-emerald-700" />
+            <RiHomeSmile2Line className={`${path == '/'  ? 'border-b-4 border-teal-500':''} lg:text-3xl text-xl text-emerald-700`} />
         </Link>
         <ul className="w-full flex items-center justify-around mainbg lg:px-2 px-1 mx-auto py-3">
           <li>

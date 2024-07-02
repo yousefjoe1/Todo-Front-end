@@ -26,7 +26,7 @@ const Auth = () => {
       <div className="auth-container mt-6 pt-2 mainbg w-[80%] mx-auto rounded-xl overflow-hidden ">
         {
             compNum == 1 ?
-            <Register />
+            <Register showLogin={()=> setCompNum(p=> 2)} />
             :
             <Login />
         }
