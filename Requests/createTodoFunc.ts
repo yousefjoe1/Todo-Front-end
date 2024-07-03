@@ -15,10 +15,6 @@ interface TodoItem {
 const createTodoFunc = async (data: TodoItem): Promise<any | ErrorResponse>  => {
   
   let checkCookie = cookies().get('todoUsertk')
-
-  console.log(checkCookie?.value);
-  
-
     if(!checkCookie){
       return {"msg":'Your need to login first'}
     }

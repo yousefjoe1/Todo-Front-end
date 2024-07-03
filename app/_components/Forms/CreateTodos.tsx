@@ -35,9 +35,12 @@ const CreateTodos = () => {
 
     setIsSubmit((p) => !p);
     try {
-      let createTodo = await createTodoFunc(d);
+      let createTodo = await createTodoFunc(d)
+      console.log(createTodo,'ctodo');
+      ;
       if (createTodo?.isError) {
-        // msg({ title: "Error", status: "success", duration: 3000 });
+        msg({ title: "Error", status: "success", duration: 3000 });
+        return
       }
     } catch (error) {}
     setIsSubmit((p) => !p);
