@@ -4,6 +4,7 @@ import { Spinner, useToast } from "@chakra-ui/react";
 import { ChakraUiProv } from "@/app/Providers/ChakraUiProv";
 
 import createTodoFunc from "@/Requests/createTodoFunc";
+import Image from "next/image";
 
 const CreateTodos = () => {
   const [isSubmit, setIsSubmit] = useState(false);
@@ -48,18 +49,21 @@ const CreateTodos = () => {
 
   return (
     <ChakraUiProv>
-      {/* <div className="mb-7"> */}
+      <div className="w-[100%] flex flex-col relative h-[450px]">
+        <div className="absolute left-0 top-0 w-full h-[450px] flex justify-center">
+          <Image className="w-full h-full object-contain" width={600} height={800} alt="background image" src={`/Todo-form-bg.jpg`} />
+        </div>
         <form
           onSubmit={submitFunc}
-          className="bg-slate-50 grid lg:grid-cols-1 md:grid-cols-1 place-items-center rounded-2xl gap-5 p-3"
+          className="darkbg relative z-10 m-auto w-[300px] flex flex-col rounded-2xl gap-5 p-3"
         >
-          <h3 className="bg-slate-400 p-2 rounded-xl">Create Todo</h3>
+          {/* <h3 className="bg-slate-400 p-2 rounded-xl">Create Todo</h3> */}
           <div>
             <label htmlFor="title">Title</label>
             <input
               onChange={(e) => setTitle((p) => e.target.value)}
               type="text"
-              className="p-2 bg-slate-500  text-white outline-none border-none block rounded-lg"
+              className="p-2 inputbg outline-none border-none rounded-lg w-full"
             />
           </div>
 
@@ -67,7 +71,7 @@ const CreateTodos = () => {
             <label htmlFor="details">Details</label>
             <textarea
               onChange={(e) => setdetails((p) => e.target.value)}
-              className="p-2 bg-slate-500 outline-none text-white border-none block rounded-lg"
+              className="p-2 inputbg outline-none border-none rounded-lg w-full"
             />
           </div>
 
@@ -75,14 +79,14 @@ const CreateTodos = () => {
             <Spinner size={"sm"} height={5} width={1} />
           ) : (
             <button
-              className="p-2 bg-slate-500 text-white hover:bg-gray-950 outline-none border-none block rounded-lg"
+              className="p-2 inputbg hover:bg-gray-950 hover:text-white outline-none border-none rounded-lg"
               type="submit"
             >
               Create
             </button>
           )}
         </form>
-      {/* </div> */}
+      </div>
     </ChakraUiProv>
   );
 };

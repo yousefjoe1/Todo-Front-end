@@ -38,6 +38,14 @@ body {
   background-color: rgb(13 148 136 / var(--tw-bg-opacity));
 }
 
+.inputbg {
+  background-color: #EAEAEA;
+}
+
+.darkbg {
+  background-color: #468585;
+}
+
 .registerbtn-active::after,
 .loginbtn-active::after{
   content: '';
