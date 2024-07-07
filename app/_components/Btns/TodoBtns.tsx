@@ -30,7 +30,6 @@ const TodoBtns = ({ todo }: { todo: TodoItem }) => {
     let resp = await update(todo.id, d);
     setIsSubmit((p) => !p);
 
-    console.log(resp, "update done");
     msg({
       title: "updated",
       status: "success",

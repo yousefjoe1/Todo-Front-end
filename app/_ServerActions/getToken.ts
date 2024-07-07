@@ -18,7 +18,7 @@ const getToken = async (): Promise<any | ErrorResponse> => {
     });
     return { data: resp.data, status: true };
   } catch (er: any) {
-    console.log(er?.response?.data, "err in gettoken.ts");
+    // console.log(er?.response?.data, "err in gettoken.ts");
     return { er: `Error ${er?.response?.data.msg}`, isError: true,data: {current_user: ''} };
   }
 };
