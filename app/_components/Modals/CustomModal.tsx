@@ -24,7 +24,7 @@ const CustomModal = ({ children,btnName,btnIcon }: { children: React.ReactNode,b
         <ModalOverlay />
         <ModalContent>
           {/* <ModalHeader>Modal Title</ModalHeader> */}
-          <ModalCloseButton />
+          <ModalCloseButton background={'teal'} />
           <ModalBody>
           {children}
           </ModalBody>

@@ -10,6 +10,7 @@ import axios from "axios";
 import TodoBtns from "@/app/_components/Btns/TodoBtns";
 import UpdateTodo from "@/app/_components/Forms/UpdateTodo";
 import CustomModal from "@/app/_components/Modals/CustomModal";
+import TodoCard from "@/app/_components/Customs/TodoCard";
 
 interface TodoItem {
   id: string;
@@ -45,28 +46,7 @@ const page = async ({ params }: { params: { todoId: string } }) => {
 
   return (
     <div className="min-h-screen p-8">
-
-      <div className="lg:w-[500px] flex flex-col gap-3 mx-auto bg-slate-400 rounded-lg p-2">
-        <h3 className="lg:text-2xl text-xl">Title: {details.title}</h3>
-
-        <p className="m-0">Details: {details.details}</p>
-
-        <TodoBtns todo={details} />
-
-        <ChakraUiProv>
-          <CustomModal
-            btnName=""
-            btnIcon={
-              <GrDocumentUpdate className="hover:bg-green-500 hover:rounded-md hover:p-1 text-xl hover:text-white" />
-            }
-          >
-            <UpdateTodo todo={details} />
-          </CustomModal>
-        </ChakraUiProv>
-      </div>
-
-      <br />
-
+      <TodoCard todo={details} fullDetails={true} />
     </div>
   );
 };

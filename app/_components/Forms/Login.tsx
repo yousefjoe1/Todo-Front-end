@@ -78,13 +78,16 @@ const Login = () => {
             />
           </div>
         </div>
-        {isSend ? (
-          <Spinner w={3} h={6} />
-        ) : (
-          <button className="w-[100px] text-white mx-auto mt-5 block p-2 bg-slate-900 ">
-            Log In
-          </button>
-        )}
+        <div className="flex justify-center">
+          {isSend ? (
+            <Spinner className='mx-auto' w={3} h={6} />
+          ) : (
+            <button className="w-[100px] text-white mt-5 p-2 bg-slate-900 ">
+              Log In
+            </button>
+          )}
+
+        </div>
       </form>
     </ChakraUiProv>
   )

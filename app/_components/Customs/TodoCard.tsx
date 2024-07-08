@@ -13,12 +13,12 @@ interface TodoItem {
   done: boolean;
 }
 
-const TodoCard = ({ todo }: { todo: TodoItem }) => {
+const TodoCard = ({ todo,fullDetails }: { todo: TodoItem,fullDetails:boolean }) => {
   return (
     <div key={todo.id} className="todo-card flex flex-col gap-2 rounded-lg">
-      <div className="todo-info bg-teal-600 p-2 rounded-xl">
-        <h2 className="text-white">title : {todo.title}</h2>
-        <p className="text-sm text-white max-w-[300px] overflow-hidden text-ellipsis whitespace-nowrap">
+      <div className="todo-info bg-teal-600 p-3 rounded-xl">
+        <h2 className="text-white lg:text-2xl text-md">title : {todo.title}</h2>
+        <p className={`lg:text-xl mt-3 text-sm text-white ${fullDetails ? ``:`max-w-[300px] overflow-hidden text-ellipsis whitespace-nowrap`}`}>
           details: {todo.details}
         </p>
       </div>

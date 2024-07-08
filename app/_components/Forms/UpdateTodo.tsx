@@ -47,7 +47,7 @@ const UpdateTodo = ({ todo }: { todo: TodoItem }) => {
         <CiEdit className="text-xl " />
       }
     >
-      <div>
+      <div className="flex flex-col gap-3 my-8">
         <input
           className="bg-gray-700 text-white p-2 rounded-lg my-1"
           type="text"
