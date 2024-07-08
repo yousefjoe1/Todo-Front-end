@@ -19,7 +19,7 @@ const Nav = ({ userAccount }: { userAccount: userDetails }) => {
   const path = usePathname();
   return (
     <ChakraUiProv>
-      <nav className="flex gap-4 relative items-center justify-around px-4 h-[60px] mainbg">
+      <nav className="flex gap-4 relative items-center justify-around px-4 lg:h-[90px] h-[60px] mainbg">
         <Link
           href={"/"}
           className={`w-[30px] `}
