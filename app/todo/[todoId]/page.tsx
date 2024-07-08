@@ -1,15 +1,10 @@
 import React from "react";
 import Link from "next/link";
 
-import { ChakraUiProv } from "@/app/Providers/ChakraUiProv";
-import { GrDocumentUpdate } from "react-icons/gr";
 import { FcHome } from "react-icons/fc";
 
 import axios from "axios";
 
-import TodoBtns from "@/app/_components/Btns/TodoBtns";
-import UpdateTodo from "@/app/_components/Forms/UpdateTodo";
-import CustomModal from "@/app/_components/Modals/CustomModal";
 import TodoCard from "@/app/_components/Customs/TodoCard";
 
 interface TodoItem {
@@ -32,8 +27,6 @@ const page = async ({ params }: { params: { todoId: string } }) => {
   const { todoId } = params;
 
   const todo = await gettodo(todoId);
-
-  //   console.log(todo, "details");
 
   if (todo?.er == true) {
     return <div className="h-screen">

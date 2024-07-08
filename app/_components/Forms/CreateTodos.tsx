@@ -57,9 +57,8 @@ const CreateTodos = () => {
           onSubmit={submitFunc}
           className="darkbg relative z-10 m-auto w-[300px] flex flex-col rounded-2xl gap-5 p-3"
         >
-          {/* <h3 className="bg-slate-400 p-2 rounded-xl">Create Todo</h3> */}
           <div>
-            <label htmlFor="title">Title</label>
+            <label className="text-white" htmlFor="title">Title</label>
             <input
               onChange={(e) => setTitle((p) => e.target.value)}
               type="text"
@@ -68,7 +67,7 @@ const CreateTodos = () => {
           </div>
 
           <div>
-            <label htmlFor="details">Details</label>
+            <label className="text-white" htmlFor="details">Details</label>
             <textarea
               onChange={(e) => setdetails((p) => e.target.value)}
               className="p-2 inputbg outline-none border-none rounded-lg w-full"
@@ -79,7 +78,7 @@ const CreateTodos = () => {
             <Spinner size={"sm"} height={5} width={1} />
           ) : (
             <button
-              className="p-2 inputbg hover:bg-gray-950 hover:text-white outline-none border-none rounded-lg"
+              className="p-2 inputbg hover:bg-teal-700 hover:text-white outline-none border-none rounded-lg"
               type="submit"
             >
               Create
