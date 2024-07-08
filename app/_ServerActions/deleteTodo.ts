@@ -11,11 +11,7 @@ const deleteTodo = async (id:string): Promise<any | ErrorResponse>  => {
   let cookie = cookies().get('todoUsertk')?.value;
 
   try {
-    const resp = await axios.delete(`http://localhost:5000/api/todos/${id}`,{
-      headers: {
-        Authorization: 'Bearer ' + cookie
-      }
-    });
+    const resp = await axios.delete(`http://localhost:5000/api/todos/${id}`);
     revalidatePath('/')
     return {data:resp.data,status: true}
   } catch (er:any) {

@@ -26,7 +26,7 @@ const UserCard = ({ userInfo }: { userInfo: UserInfo }) => {
   return (
     <>
       <button onClick={onOpen}>
-        <ImProfile className="lg:text-3xl text-base text-emerald-700" />
+        <ImProfile className="lg:text-3xl text-base text-white" />
       </button>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
