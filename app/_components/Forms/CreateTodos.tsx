@@ -36,29 +36,42 @@ const CreateTodos = () => {
 
     setIsSubmit((p) => !p);
     try {
-      let createTodo = await createTodoFunc(d)
-      console.log(createTodo,'ctodo');
-      ;
+      let createTodo = await createTodoFunc(d);
       if (createTodo?.isError) {
-        msg({ title: "Error", status: "success", duration: 3000 });
-        return
+        setIsSubmit((p) => !p);
+
+        msg({
+          title: "Error: make sure u are a user",
+          status: "error",
+          duration: 3000,
+        });
+        return;
       }
-    } catch (error) {}
-    setIsSubmit((p) => !p);
+    } catch (error) {
+      setIsSubmit((p) => !p);
+    }
   };
 
   return (
     <ChakraUiProv>
       <div className="w-[100%] flex flex-col relative h-[450px]">
         <div className="absolute left-0 top-0 w-full h-[450px] flex justify-center">
-          <Image className="w-full h-full object-contain" width={600} height={800} alt="background image" src={`/Todo-form-bg.jpg`} />
+          <Image
+            className="w-full h-full object-contain"
+            width={600}
+            height={800}
+            alt="background image"
+            src={`/Todo-form-bg.jpg`}
+          />
         </div>
         <form
           onSubmit={submitFunc}
           className="darkbg relative z-10 m-auto w-[300px] flex flex-col rounded-2xl gap-5 p-3"
         >
           <div>
-            <label className="text-white" htmlFor="title">Title</label>
+            <label className="text-white" htmlFor="title">
+              Title
+            </label>
             <input
               onChange={(e) => setTitle((p) => e.target.value)}
               type="text"
@@ -67,7 +80,9 @@ const CreateTodos = () => {
           </div>
 
           <div>
-            <label className="text-white" htmlFor="details">Details</label>
+            <label className="text-white" htmlFor="details">
+              Details
+            </label>
             <textarea
               onChange={(e) => setdetails((p) => e.target.value)}
               className="p-2 inputbg outline-none border-none rounded-lg w-full"

@@ -14,6 +14,7 @@ import {
 
 import { ImProfile } from "react-icons/im";
 import { TbUserHexagon } from "react-icons/tb";
+import logout from "@/app/_ServerActions/logout";
 
 interface UserInfo {
   name: string;
@@ -22,6 +23,10 @@ interface UserInfo {
 
 const UserCard = ({ userInfo }: { userInfo: UserInfo }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const logoutFunc = () => {
+    logout()
+  }
 
   return (
     <>
@@ -45,7 +50,8 @@ const UserCard = ({ userInfo }: { userInfo: UserInfo }) => {
             <h2 className="border-b-[1px] border-b-teal-700 my-3 p-1 rounded-l-lg">Name: {userInfo.name} </h2>
           </DrawerBody>
 
-          <DrawerFooter>
+          <DrawerFooter flex={'flex'} justifyContent={'space-between'}>
+            <button className="border-b-[1px] mainbg text-white my-3 p-1 rounded-l-lg" onClick={logoutFunc}>Logout</button>
             <button  className="border-b-[1px] border-b-teal-700 my-3 p-1 rounded-l-lg" onClick={onClose}>Close</button>
           </DrawerFooter>
         </DrawerContent>

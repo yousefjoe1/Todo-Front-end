@@ -18,7 +18,7 @@ interface TodoItem {
 export let db = process.env.B_HOST
 
 export default async function Home() {
-  const { data, err, status } = await todos("todos?number=5");
+  const { data, err, status } = await todos("todos?number=6");
 
   return (
     <main className="min-h-screen lg:p-24 md:p-12 p-4">
@@ -31,14 +31,14 @@ export default async function Home() {
       ) : (
         <>
         <Link href={'/alltasks'} className="flex my-3">
-        First 5 todos .. <center className="flex-1"><strong className="text-teal-600">See all {">"}</strong></center>
+        First 6 todos .. <center className="flex-1"><strong className="text-teal-600">See all {">"}</strong></center>
         </Link>
         <div className="todoslist-wrapper grid lg:grid-cols-3 md:grid-cols-2 gap-4">
 
           <Suspense fallback={<Spinner h={60} w={2} />}>
             {data.result &&
               data.result.reverse().map((todo: TodoItem) => (
-                <TodoCard todo={todo} />
+                <TodoCard todo={todo} fullDetails={false} />
               ))}
           </Suspense>
         </div>
