@@ -31,7 +31,7 @@ export default async function Home() {
       ) : (
         <>
         <Link href={'/alltasks'} className="flex my-3">
-        First 6 todos .. <center className="flex-1"><strong className="text-teal-600">See all {">"}</strong></center>
+        Will Show First 6 todos .. <center className="flex-1"><strong className="text-teal-600">See all {">"}</strong></center>
         </Link>
         <div className="todoslist-wrapper grid lg:grid-cols-3 md:grid-cols-2 gap-4">
 

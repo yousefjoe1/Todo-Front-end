@@ -16,7 +16,7 @@ interface TodoItem {
 const DoneTodo = ({todo}:{todo:TodoItem}) => {
     const [isSubmit, setIsSubmit] = useState(false);
 
-    const { id, done } = todo;
+    const { done } = todo;
   
     const msg = useToast();
   
@@ -35,9 +35,9 @@ const DoneTodo = ({todo}:{todo:TodoItem}) => {
       });
     };
   return (
-    <button className="">
+    <button className="flex">
     {isSubmit ? (
-      <Spinner size={"sm"} height={5} width={1} />
+      <Spinner size={"md"} height={8} width={2} color='blue' />
     ) : (
       <>
         {done ? (

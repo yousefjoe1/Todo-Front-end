@@ -16,7 +16,7 @@ const createTodoFunc = async (data: TodoItem): Promise<any | ErrorResponse>  => 
   
   let checkCookie = cookies().get('todoUsertk')
     if(!checkCookie){
-      return {"msg":'Your need to login first'}
+      return {"msg":'Your need to login first',isError: true}
     }
 
   try {

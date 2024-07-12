@@ -10,7 +10,7 @@ const Login = () => {
   const router = useRouter();
   useEffect(() => {
     setTimeout(() => {
-      document.getElementById('user-email')?.classList.add('name-anim')
+      document.getElementById('user-email-1')?.classList.add('name-anim')
       document.getElementById('user-password')?.classList.add('email-anim')
     }, 1000);
   }, [])
@@ -51,7 +51,7 @@ const Login = () => {
     <ChakraUiProv>
       <form onSubmit={handleSubmit}>
         <div className="mt-5 lg:w-[300px] md:w-[300px]">
-          <label htmlFor="user-email" className="ml-2">
+          <label htmlFor="user-email-1" className="ml-2">
             Email
           </label>
           <input
@@ -59,7 +59,7 @@ const Login = () => {
               setInfo((p) => (p = { ...p, email: e.target.value }))
             }
             type="email"
-            id="user-email"
+            id="user-email-1"
             className="bg-rose-50 border-none outline-none text-teal-600 max-[400px]:w-full p-2 block lg:rounded-r-xl translate-x-[70%] ease-in-out duration-700 transition-all"
           />
         </div>

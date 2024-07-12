@@ -46,6 +46,9 @@ const CreateTodos = () => {
           duration: 3000,
         });
         return;
+      }else {
+        setIsSubmit((p) => !p);
+
       }
     } catch (error) {
       setIsSubmit((p) => !p);
@@ -90,7 +93,7 @@ const CreateTodos = () => {
           </div>
 
           {isSubmit ? (
-            <Spinner size={"sm"} height={5} width={1} />
+            <Spinner size={"xl"} height={5} width={1} color="white" />
           ) : (
             <button
               className="p-2 inputbg hover:bg-teal-700 hover:text-white outline-none border-none rounded-lg"

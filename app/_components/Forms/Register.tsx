@@ -10,9 +10,9 @@ const Register = ({showLogin}:{showLogin: Function}) => {
 
   useEffect(() => {
     setTimeout(() => {
-      document.getElementById('username')?.classList.add('name-anim')
+      document.getElementById('username-1')?.classList.add('name-anim')
       document.getElementById('password-login')?.classList.add('pass-anim')
-      document.getElementById('useremail')?.classList.add('email-anim')
+      document.getElementById('useremail-1')?.classList.add('email-anim')
     }, 1000);
     // pass-anim email-anim
   }, [])
@@ -53,21 +53,21 @@ const Register = ({showLogin}:{showLogin: Function}) => {
     <ChakraUiProv>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="username" className="ml-3">
+          <label htmlFor="username-1" className="ml-3">
             Your Name
           </label>
           <input
             onChange={(e) =>
               setInfo((p) => (p = { ...p, name: e.target.value }))
             }
-            id="username"
+            id="username-1"
             type="text"
             className={`bg-rose-50 text-teal-600 block p-2 rounded-r-xl translate-x-[70%] ease-in-out duration-700 transition-all`}
           />
         </div>
         {/* <br /> */}
         <div className="mt-5 lg:w-[300px] md:w-[300px] mx-auto">
-          <label htmlFor="useremail">
+          <label htmlFor="useremail-1">
             Email
           </label>
           <input
@@ -75,7 +75,7 @@ const Register = ({showLogin}:{showLogin: Function}) => {
               setInfo((p) => (p = { ...p, email: e.target.value }))
             }
             type="email"
-            id="useremail"
+            id="useremail-1"
             className={`bg-rose-50 text-teal-600 max-[400px]:w-full h-4 p-2 block lg:rounded-xl ease-in-out duration-700 transition-all`}
           />
         </div>
@@ -94,13 +94,16 @@ const Register = ({showLogin}:{showLogin: Function}) => {
             />
           </div>
         </div>
-        {isSend ? (
-          <Spinner w={3} h={6} />
-        ) : (
-          <button className="w-[100px] text-white mx-auto mt-5 block p-2 bg-slate-900 ">
-            Register
-          </button>
-        )}
+        <div className="flex justify-center">
+          {isSend ? (
+            <Spinner w={2} h={6}  color="white" mx={'auto'} size={'xl'} />
+          ) : (
+            <button className="w-[100px] text-white mx-auto mt-5 block p-2 bg-slate-900 ">
+              Register
+            </button>
+          )}
+
+        </div>
       </form>
     </ChakraUiProv>
   );

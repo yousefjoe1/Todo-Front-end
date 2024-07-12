@@ -20,6 +20,7 @@ const todos = async (api:string): Promise<any | ErrorResponse> => {
         Authorization: 'Bearer ' + cookie
       }
     });
+    
     return { data: resp.data, status: true };
   } catch (er: any) {
     return { er: `Error ${er?.response?.data.msg}`, isError: true,data: {current_user: ''} };
